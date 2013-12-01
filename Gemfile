@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+
+
 group :development do
   gem 'rake', '~> 0.9'
   gem 'jekyll', '~> 0.12'
@@ -15,6 +17,7 @@ group :development do
   gem 'stringex', '~> 1.4.0'
   gem 'liquid', '~> 2.3.0'
   gem 'directory_watcher', '1.4.1'
+  gem 'heroku'
 end
 
 gem 'sinatra', '~> 1.4.2'
