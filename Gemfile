@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 
 group :development do
-  gem 'rake', '~> 0.9'
+  gem 'rake'
   gem 'jekyll', '~> 0.12'
   gem 'rdiscount', '~> 2.0.7'
   gem 'pygments.rb', '~> 0.3.4'
@@ -17,6 +17,7 @@ group :development do
   gem 'stringex', '~> 1.4.0'
   gem 'liquid', '~> 2.3.0'
   gem 'directory_watcher', '1.4.1'
+  gem 'jquery-rails'
   gem 'heroku'
 end
 
