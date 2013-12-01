@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
+  <title>Category: Vpn - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was &hellip;">
+  <meta name="description" content="Category: vpn">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yoursite.com">
+  <link rel="canonical" href="http://yoursite.comblog/categories/vpn">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -63,77 +63,40 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article role="article">
   
-  
-  
-    <article>
-      
   <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/01/bootstraping-cassandra-via-vpn/">Bootstraping Cassandra via VPN</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-01T02:45:09+02:00" pubdate data-updated="true">Dec 1<span>st</span>, 2013</time>
-        
-      </p>
+    <h1 class="entry-title">Category: Vpn</h1>
     
   </header>
+  
+  <div id="blog-archives" class="category">
 
 
-  <div class="entry-content"><p>The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was encountered for the mechanism of detecting which IP was to be placed in cassandra&rsquo;s configuration (for the listen_address option).</p>
 
-<p>The current code structure first checks if a VPN connection is available, then looks for a Ethernet connection and finally if the previous two are unavailable, a WIFI connection is used.</p>
+  
+  <h2>2013</h2>
 
-<br/>
+<article>
+  
+<h1><a href="/blog/2013/12/01/bootstraping-cassandra-via-vpn/">Bootstraping Cassandra via VPN</a></h1>
+<time datetime="2013-12-01T02:45:09+02:00" pubdate><span class='month'>Dec</span> <span class='day'>01</span> <span class='year'>2013</span></time>
 
-
-<script src="https://gist.github.com/lyubent/5293431.js"></script>
-
-
-<br/>
-
-
-<p>On a side note, some usability testing was carried out. The aim was to workout which of the three connection types was used most frequently. With the help of ten volunteers, it was established that most liked the VPN connection best as CassTor always managed to bootstrap straight away, while with WIFI and Ethernet connections there were occasionally timeouts:</p>
-
-<script src="http://code.highcharts.com/highcharts.js"></script>
+<footer>
+  <span class="categories">posted in <a class='category' href='/blog/categories/cassandra/'>cassandra</a>, <a class='category' href='/blog/categories/networking/'>networking</a>, <a class='category' href='/blog/categories/vpn/'>vpn</a></span>
+</footer>
 
 
-<div id="container" style="width: 320px; height: 320px"></div>
+</article>
 
-
-<script>
-var chart;$(document).ready(function(){Highcharts.setOptions({colors:["#FF9655","#058DC7","#6AF9C4"]});chart=new Highcharts.Chart({series:[{name:"Values",type:"pie",sliced:true,data:[["VPN",7],["Ethernet",3],["Wifi",0]],pointWidth:15,color:"#C6D9E7",borderColor:"gray",shadow:true}],title:{text:" "},legend:{style:{left:"auto",bottom:"auto",right:"auto",top:"auto"}},chart:{renderTo:"container"},credits:{enabled:false}})})
-</script>
-
-
-<p>The above pretty much concludes that the current approach assumes too much about the network infrastructure that casstor can handle. One possibility is to switch to a Network topology keyspace, but it could be argued that the reliability VPN provides should be part of the prerequisites of the application.</p>
 </div>
-  
-  
 
-
-    </article>
   
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+</article>
+
 </div>
+
 <aside class="sidebar">
   
     <section>
@@ -153,6 +116,7 @@ var chart;$(document).ready(function(){Highcharts.setOptions({colors:["#FF9655",
 
   
 </aside>
+
 
     </div>
   </div>

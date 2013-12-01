@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>My Octopress Blog</title>
+  <title>Bootstraping Cassandra via VPN - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://yoursite.com">
+  <link rel="canonical" href="http://yoursite.com/blog/2013/12/01/bootstraping-cassandra-via-vpn">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/12/01/bootstraping-cassandra-via-vpn/">Bootstraping Cassandra via VPN</a></h1>
+      <h1 class="entry-title">Bootstraping Cassandra via VPN</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was encountered for the mechanism of detecting which IP was to be placed in cassandra&rsquo;s configuration (for the listen_address option).</p>
+<div class="entry-content"><p>The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was encountered for the mechanism of detecting which IP was to be placed in cassandra&rsquo;s configuration (for the listen_address option).</p>
 
 <p>The current code structure first checks if a VPN connection is available, then looks for a Ethernet connection and finally if the previous two are unavailable, a WIFI connection is used.</p>
 
@@ -122,18 +119,57 @@ var chart;$(document).ready(function(){Highcharts.setOptions({colors:["#FF9655",
 
 <p>The above pretty much concludes that the current approach assumes too much about the network infrastructure that casstor can handle. One possibility is to switch to a Network topology keyspace, but it could be argued that the reliability VPN provides should be part of the prerequisites of the application.</p>
 </div>
+
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
   
 
 
-    </article>
+<time datetime="2013-12-01T02:45:09+02:00" pubdate data-updated="true">Dec 1<span>st</span>, 2013</time>
+      
+
+<span class="categories">
   
-  <div class="pagination">
+    <a class='category' href='/blog/categories/cassandra/'>cassandra</a>, <a class='category' href='/blog/categories/networking/'>networking</a>, <a class='category' href='/blog/categories/vpn/'>vpn</a>
+  
+</span>
+
+
+    </p>
     
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://yoursite.com/blog/2013/12/01/bootstraping-cassandra-via-vpn/" data-via="" data-counturl="http://yoursite.com/blog/2013/12/01/bootstraping-cassandra-via-vpn/" >Tweet</a>
+  
+  
+  
 </div>
+
+    
+    <p class="meta">
+      
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -153,6 +189,7 @@ var chart;$(document).ready(function(){Highcharts.setOptions({colors:["#FF9655",
 
   
 </aside>
+
 
     </div>
   </div>
