@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://lyubentodorov.co.uk
+title: Lyuben's Blog
+subtitle: <br/>
+author: Lyuben Todorov
 simple_search: http://google.com/search
-description:
+description: <br/>
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -63,13 +63,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
-github_repo_count: 0
+github_user: lyubent
+github_repo_count: 10
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: lyubent
 twitter_tweet_button: true
 
 # Google +1
@@ -82,12 +82,14 @@ googleplus_user:
 googleplus_hidden: false
 
 # Pinboard
-pinboard_user:
+pinboard_user: 
 pinboard_count: 3
 
-# Delicious
-delicious_user:
-delicious_count: 3
+# SO
+stackoverflow_user: 1159472
+
+# LinkedIn
+linkedin_user: lyubent
 
 # Disqus Comments
 disqus_short_name:

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Vpn | My Octopress Blog]]></title>
-  <link href="http://yoursite.com/blog/categories/vpn/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-12-01T03:25:12+02:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Category: Vpn | Lyuben's Blog]]></title>
+  <link href="http://lyubentodorov.co.uk/blog/categories/vpn/atom.xml" rel="self"/>
+  <link href="http://lyubentodorov.co.uk/"/>
+  <updated>2014-03-03T06:42:00+02:00</updated>
+  <id>http://lyubentodorov.co.uk/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Lyuben Todorov]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Bootstraping Cassandra via VPN]]></title>
-    <link href="http://yoursite.com/blog/2013/12/01/bootstraping-cassandra-via-vpn/"/>
+    <link href="http://lyubentodorov.co.uk/blog/2013/12/01/bootstraping-cassandra-via-vpn/"/>
     <updated>2013-12-01T02:45:09+02:00</updated>
-    <id>http://yoursite.com/blog/2013/12/01/bootstraping-cassandra-via-vpn</id>
+    <id>http://lyubentodorov.co.uk/blog/2013/12/01/bootstraping-cassandra-via-vpn</id>
     <content type="html"><![CDATA[<p>The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was encountered for the mechanism of detecting which IP was to be placed in cassandra&rsquo;s configuration (for the listen_address option).</p>
 
 <p>The current code structure first checks if a VPN connection is available, then looks for a Ethernet connection and finally if the previous two are unavailable, a WIFI connection is used.</p>
