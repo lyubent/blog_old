@@ -5,8 +5,14 @@
         <lastmod>2014-03-03T00:03:38+02:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://lyubentodorov.co.uk/blog/2014/03/03/repair-with-lcs-in-cassandra-2-dot-1/
+        </loc>
+        <lastmod>2014-03-09T04:14:24+02:00</lastmod>
+    </url>
+    <url>
         <loc>http://lyubentodorov.co.uk/blog/archives/</loc>
-        <lastmod>2014-03-03T00:03:38+02:00</lastmod>
+        <lastmod>2014-03-09T04:14:24+02:00</lastmod>
     </url>
     <url>
         <loc>http://lyubentodorov.co.uk/blog/categories/</loc>
@@ -14,11 +20,11 @@
     </url>
     <url>
         <loc>http://lyubentodorov.co.uk/blog/contact/</loc>
-        <lastmod>2014-03-03T06:14:35+02:00</lastmod>
+        <lastmod>2014-03-09T04:14:24+02:00</lastmod>
     </url>
     <url>
         <loc>http://lyubentodorov.co.uk/</loc>
-        <lastmod>2014-03-03T00:03:38+02:00</lastmod>
+        <lastmod>2014-03-09T04:23:10+02:00</lastmod>
     </url>
     <url>
         <loc>http://lyubentodorov.co.uk/robots.txt</loc>
