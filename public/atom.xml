@@ -4,7 +4,7 @@
   <title><![CDATA[Lyuben's Blog]]></title>
   <link href="http://lyubentodorov.co.uk/atom.xml" rel="self"/>
   <link href="http://lyubentodorov.co.uk/"/>
-  <updated>2014-04-16T12:11:09+03:00</updated>
+  <updated>2014-04-16T12:19:56+03:00</updated>
   <id>http://lyubentodorov.co.uk/</id>
   <author>
     <name><![CDATA[Lyuben Todorov]]></name>
@@ -79,9 +79,10 @@ CREATE TABLE timeline (
 <br/>
 
 
-<p>An important note. The data-model presented here is only partially denormalized. Denormalizing the tweets table completely into the timeline and userline tables would improve query time, by letting us directly query the tweets from them, instead of requiring a second set of SELECT&rsquo;s to retrieve the content of the tweets<br/>
-<strong>Tracking Followers</strong><br/>
-The followers table allows for retrieval of the users that are following you. The friends table allows for retrieval of the users that you follow. The primary key for both tables is a composite key. This is important because the first component of the composite key, the partition key, decides how to split data around the cluster. One set of replicas will store all the data for a specific user. The second component is the clustering key which is used to store data in a particular order on disk. Although the ordering itself isn&rsquo;t important for either table, the clustering key means all rows for a particular user will be stored contiguously on disk.  This optimises reading a user&rsquo;s friends or followers by allowing for a sequential disk read.<br/><br/></p>
+<p>An important note. The data-model presented here is only partially denormalized. Denormalizing the tweets table completely into the timeline and userline tables would improve query time, by letting us directly query the tweets from them, instead of requiring a second set of SELECT&rsquo;s to retrieve the content of the tweets<br/></p>
+
+<br/><strong>Tracking Followers</strong><br/>The followers table allows for retrieval of the users that are following you. The friends table allows for retrieval of the users that you follow. The primary key for both tables is a composite key. This is important because the first component of the composite key, the partition key, decides how to split data around the cluster. One set of replicas will store all the data for a specific user. The second component is the clustering key which is used to store data in a particular order on disk. Although the ordering itself isn&#8217;t important for either table, the clustering key means all rows for a particular user will be stored contiguously on disk.  This optimises reading a user&#8217;s friends or followers by allowing for a sequential disk read.<br/><br/>
+
 
 <pre style="background-color: #eee; font-size: 0.7em;padding: 10px 4px; margin: 0">CREATE TABLE friends (
 &nbsp;&nbsp;&nbsp;&nbsp;username text,
@@ -127,9 +128,10 @@ session = CLUSTER.connect('twissandra')</pre>
 <h2>Some CRUD</h2>
 
 
-<p>The various things that twitter can do, whether it&rsquo;s inserting a tweet, retrieving your followers, updating your password or unfollowing someone, are examples of create / read / update and delete operations that can be carried out on Cassandra.<br/>
-<strong>Tweeting &ndash; Create</strong><br/>
-Adding tweets is done via Twissandra&rsquo;s <a href="https://github.com/twissandra/twissandra/blob/master/cass.py#L224" target="_blank">save_tweet</a> function where four kinds of queries are carried out:</p>
+<p>The various things that twitter can do, whether it&rsquo;s inserting a tweet, retrieving your followers, updating your password or unfollowing someone, are examples of create / read / update and delete operations that can be carried out on Cassandra.<br/></p>
+
+<br/><strong>Tweeting - Create</strong><br/>Adding tweets is done via Twissandra&#8217;s <a href="https://github.com/twissandra/twissandra/blob/master/cass.py#L224" target="_blank">save_tweet</a> function where four kinds of queries are carried out:
+
 
 <ol>
     <li>Insert the tweet</li>
@@ -251,9 +253,10 @@ for row in results:
 <br/>
 
 
-<p>Queries are sometimes executed using <code>session.execute</code> and other times <code>session.execute_async</code> is used instead. The difference between the two is that <strong>execute</strong> waits for a response before returning whilst <strong>execute_async</strong> returns a &ldquo;future&rdquo; so it can send multiple messages concurrently, without waiting for responses, therefore there is no guarantee on the order of the responses. The returned <code>ResponseFuture</code> can be used to verify the query&rsquo;s success for both serial and concurrent queries. On failure an exception would be raised.<br/>
-<strong>Changing Password &ndash; Update</strong><br/>
-Updates and inserts have mostly identical behavior with Cassandra.  They both blindly overwrite existing (or non-existing) data. Twissandra doesn&rsquo;t use UPDATE statements but for completeness here is a theoretical example of updating a password:<br/><br/></p>
+<p>Queries are sometimes executed using <code>session.execute</code> and other times <code>session.execute_async</code> is used instead. The difference between the two is that <strong>execute</strong> waits for a response before returning whilst <strong>execute_async</strong> returns a &ldquo;future&rdquo; so it can send multiple messages concurrently, without waiting for responses, therefore there is no guarantee on the order of the responses. The returned <code>ResponseFuture</code> can be used to verify the query&rsquo;s success for both serial and concurrent queries. On failure an exception would be raised.<br/></p>
+
+<br/><strong>Changing Password - Update</strong><br/>Updates and inserts have mostly identical behavior with Cassandra.  They both blindly overwrite existing (or non-existing) data. Twissandra doesn&#8217;t use UPDATE statements but for completeness here is a theoretical example of updating a password:<br/><br/>
+
 
 <pre style="background-color: #eee; font-size: 0.7em;padding: 10px 4px; margin: 0">
 update_password_query = session.prepare("UPDATE users SET password = ? WHERE username = ?")

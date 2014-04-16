@@ -37,8 +37,7 @@ CREATE TABLE timeline (
 Because the username is the partition key, we can easily select the most recent tweets for a specific user. The LIMIT clause can then be added to enforce a limit on how many tweets are retrieved:<br/><br/>
 <pre style="background-color: #eee; font-size: 0.7em;padding: 10px 4px; margin: 0">SELECT * FROM timeline WHERE username=? LIMIT 100</pre><br/>
 An important note. The data-model presented here is only partially denormalized. Denormalizing the tweets table completely into the timeline and userline tables would improve query time, by letting us directly query the tweets from them, instead of requiring a second set of SELECT's to retrieve the content of the tweets<br/>
-<strong>Tracking Followers</strong><br/>
-The followers table allows for retrieval of the users that are following you. The friends table allows for retrieval of the users that you follow. The primary key for both tables is a composite key. This is important because the first component of the composite key, the partition key, decides how to split data around the cluster. One set of replicas will store all the data for a specific user. The second component is the clustering key which is used to store data in a particular order on disk. Although the ordering itself isn't important for either table, the clustering key means all rows for a particular user will be stored contiguously on disk.  This optimises reading a user's friends or followers by allowing for a sequential disk read.<br/><br/>
+<br/><strong>Tracking Followers</strong><br/>The followers table allows for retrieval of the users that are following you. The friends table allows for retrieval of the users that you follow. The primary key for both tables is a composite key. This is important because the first component of the composite key, the partition key, decides how to split data around the cluster. One set of replicas will store all the data for a specific user. The second component is the clustering key which is used to store data in a particular order on disk. Although the ordering itself isn't important for either table, the clustering key means all rows for a particular user will be stored contiguously on disk.  This optimises reading a user's friends or followers by allowing for a sequential disk read.<br/><br/>
 <pre style="background-color: #eee; font-size: 0.7em;padding: 10px 4px; margin: 0">CREATE TABLE friends (
 &nbsp;&nbsp;&nbsp;&nbsp;username text,
 &nbsp;&nbsp;&nbsp;&nbsp;friend text,
@@ -63,8 +62,7 @@ CLUSTER = Cluster(['127.0.0.1'])
 session = CLUSTER.connect('twissandra')</pre><br/>
 <h2>Some CRUD</h2>
 The various things that twitter can do, whether it's inserting a tweet, retrieving your followers, updating your password or unfollowing someone, are examples of create / read / update and delete operations that can be carried out on Cassandra.<br/>
-<strong>Tweeting - Create</strong><br/>
-Adding tweets is done via Twissandra's <a href="https://github.com/twissandra/twissandra/blob/master/cass.py#L224" target="_blank">save_tweet</a> function where four kinds of queries are carried out:
+<br/><strong>Tweeting - Create</strong><br/>Adding tweets is done via Twissandra's <a href="https://github.com/twissandra/twissandra/blob/master/cass.py#L224" target="_blank">save_tweet</a> function where four kinds of queries are carried out:
 <ol>
     <li>Insert the tweet</li>
     <li>Update the current user’s userline with the tweet_id </li>
@@ -142,8 +140,7 @@ for row in results:
 &nbsp;&nbsp;&nbsp;&nbsp;futures.append(session.execute_async(
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;get_tweets_query, (row.tweet_id,)))</pre><br/>
 Queries are sometimes executed using <code>session.execute</code> and other times <code>session.execute_async</code> is used instead. The difference between the two is that <strong>execute</strong> waits for a response before returning whilst <strong>execute_async</strong> returns a "future" so it can send multiple messages concurrently, without waiting for responses, therefore there is no guarantee on the order of the responses. The returned <code>ResponseFuture</code> can be used to verify the query's success for both serial and concurrent queries. On failure an exception would be raised.<br/>
-<strong>Changing Password - Update</strong><br/>
-Updates and inserts have mostly identical behavior with Cassandra.  They both blindly overwrite existing (or non-existing) data. Twissandra doesn't use UPDATE statements but for completeness here is a theoretical example of updating a password:<br/><br/>
+<br/><strong>Changing Password - Update</strong><br/>Updates and inserts have mostly identical behavior with Cassandra.  They both blindly overwrite existing (or non-existing) data. Twissandra doesn't use UPDATE statements but for completeness here is a theoretical example of updating a password:<br/><br/>
 <pre style="background-color: #eee; font-size: 0.7em;padding: 10px 4px; margin: 0">
 update_password_query = session.prepare("UPDATE users SET password = ? WHERE username = ?")
 session.execute(update_password_query, (password, username)))</pre><br/>
