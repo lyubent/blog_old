@@ -4,7 +4,7 @@
   <title><![CDATA[Lyuben's Blog]]></title>
   <link href="http://lyubentodorov.co.uk/atom.xml" rel="self"/>
   <link href="http://lyubentodorov.co.uk/"/>
-  <updated>2014-04-16T12:19:56+03:00</updated>
+  <updated>2015-01-05T20:48:32+00:00</updated>
   <id>http://lyubentodorov.co.uk/</id>
   <author>
     <name><![CDATA[Lyuben Todorov]]></name>
@@ -14,9 +14,40 @@
 
   
   <entry>
+    <title type="html"><![CDATA[redist]]></title>
+    <link href="http://lyubentodorov.co.uk/blog/2015/01/05/redist/"/>
+    <updated>2015-01-05T20:45:21+00:00</updated>
+    <id>http://lyubentodorov.co.uk/blog/2015/01/05/redist</id>
+    <content type="html"><![CDATA[<h2>REdiST = Redis + REST</h2>
+
+
+<p>REdiST is a REST service that uses Redis as it&#8217;s data cache. It was developed as part of a 2 hour coding interview and took me a total of 32 minutes. The task was to create a REST service that used a NoSQL store in Java and handles a GET request from which it extracts 3 parameters, page, size, zoomFactor, checks whether an entry for these parameters are present in a cache and returns the stored value as a string.</p>
+
+
+<br/>
+
+
+<p>I&#8217;m particullarly proud of this peice of work as it was my first time using trying to embed tomcat instead of setting up a full instance to host the REST service. Spring makes it simple enough to add a web service, and with it&#8217;s ability to embed tomcat it seemed like a perfect choice for the task.</p>
+
+
+<br/>
+
+
+<p>Why did I use the tech that was listed above? Java was part of the requirements that I was issued and everything else seemed like the optimal choice knowing that it was a race against the clock. I&#8217;ve gained a bunch of experience with Cassandra in the NoSQL world, but the Facebook born distrubuted beast felt like overkill for the task, instead the much more lean, lightweight and configuration free Redis was used, and it gave me an excuse to try something new. Spring seemed like a solid choice thanks to it&#8217;s ability to embed tomcat in a few lines of code, this was a large reason for choosing Spring due to the time-based challenge that was presented in the task.</p>
+
+
+<br/>
+
+
+<p>The full <a href="">REdiST application</a> can be found on my github.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Python driver overview using Twissandra]]></title>
     <link href="http://lyubentodorov.co.uk/blog/2014/04/16/python-driver-overview-using-twissandra/"/>
-    <updated>2014-04-16T11:45:20+03:00</updated>
+    <updated>2014-04-16T09:45:20+01:00</updated>
     <id>http://lyubentodorov.co.uk/blog/2014/04/16/python-driver-overview-using-twissandra</id>
     <content type="html"><![CDATA[<p>Twissandra, a Twitter clone using Cassandra for storage, has had a makeover to use the new <a href=""https://github.com/datastax/python-driver" target="_blank">python driver</a>. This allowed the clone to make the switch from the thrift API to using CQL3 over the <a href="http://www.datastax.com/dev/blog/binary-protocol" target="_blank">native protocol</a>. Let&#8217;s go through some examples of using the python driver, taken from the updated Twissandra code.</p>
 
@@ -337,7 +368,7 @@ session.execute(add_user_query, ("lyubent", "passw0rd", "{'me@email.com', 'me@ex
   <entry>
     <title type="html"><![CDATA[Repair with LCS in Cassandra 2.1]]></title>
     <link href="http://lyubentodorov.co.uk/blog/2014/03/03/repair-with-lcs-in-cassandra-2-dot-1/"/>
-    <updated>2014-03-03T07:03:09+02:00</updated>
+    <updated>2014-03-03T05:03:09+00:00</updated>
     <id>http://lyubentodorov.co.uk/blog/2014/03/03/repair-with-lcs-in-cassandra-2-dot-1</id>
     <content type="html"><![CDATA[<p>Post <a href="https://issues.apache.org/jira/browse/CASSANDRA-5351" target="_blank" title="More efficient repairs - Cassandra JIRA">CASSANDRA-5351</a> repairs can be carried out incrementally to reduce repair time, more details can be found on the <a href="http://www.datastax.com/dev/blog/more-efficient-repairs" target="_blank" title="More efficient repairs in 2.1">DataStax dev blog</a>.</p>
 
@@ -354,7 +385,7 @@ session.execute(add_user_query, ("lyubent", "passw0rd", "{'me@email.com', 'me@ex
   <entry>
     <title type="html"><![CDATA[Bootstraping cassandra via VPN]]></title>
     <link href="http://lyubentodorov.co.uk/blog/2013/12/01/bootstraping-cassandra-via-vpn/"/>
-    <updated>2013-12-01T02:45:09+02:00</updated>
+    <updated>2013-12-01T00:45:09+00:00</updated>
     <id>http://lyubentodorov.co.uk/blog/2013/12/01/bootstraping-cassandra-via-vpn</id>
     <content type="html"><![CDATA[<p>The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was encountered for the mechanism of detecting which IP was to be placed in cassandra&rsquo;s configuration (for the listen_address option).</p>
 

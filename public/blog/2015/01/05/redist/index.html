@@ -5,11 +5,11 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Category: special-case - Lyuben's Blog</title>
+	<title>redist - Lyuben's Blog</title>
 	<meta name="author" content="Lyuben Todorov">
 
 	
-	<meta name="description" content="Category: special-case">
+	<meta name="description" content="Redist REdiST = Redis + REST REdiST is a REST service that uses Redis as it&#8217;s data cache. It was developed as part of a 2 hour coding &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@
 
 	<link href="/atom.xml" rel="alternate" title="Lyuben's Blog" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://lyubentodorov.co.ukblog/categories/special-case/">
+	<link rel="canonical" href="http://lyubentodorov.co.uk/blog/2015/01/05/redist/">
 	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -104,29 +104,47 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner">
-	
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Redist</h1>
+	<div class="entry-content" itemprop="articleBody"><h2>REdiST = Redis + REST</h2>
 
 
-	
-	
-	<section class="archives"><h1 class="year">2014</h1>
-
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<span class="date"><time datetime="2014-03-03T05:03:09+00:00" itemprop="datePublished">Mar  3</time></span>
-		<br>
-		<span class="tags">
+<p>REdiST is a REST service that uses Redis as it&#8217;s data cache. It was developed as part of a 2 hour coding interview and took me a total of 32 minutes. The task was to create a REST service that used a NoSQL store in Java and handles a GET request from which it extracts 3 parameters, page, size, zoomFactor, checks whether an entry for these parameters are present in a cache and returns the stored value as a string.</p>
 
 
-	<a class='category' href='/blog/categories/cassandra/'>cassandra</a>, <a class='category' href='/blog/categories/compaction/'>compaction</a>, <a class='category' href='/blog/categories/repair/'>repair</a>, <a class='category' href='/blog/categories/special-case/'>special-case</a>
+<br/>
 
 
-</span>
-	    
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2014/03/03/repair-with-lcs-in-cassandra-2-dot-1/">Repair with LCS in Cassandra 2.1</a></h1>
+<p>I&#8217;m particullarly proud of this peice of work as it was my first time using trying to embed tomcat instead of setting up a full instance to host the REST service. Spring makes it simple enough to add a web service, and with it&#8217;s ability to embed tomcat it seemed like a perfect choice for the task.</p>
+
+
+<br/>
+
+
+<p>Why did I use the tech that was listed above? Java was part of the requirements that I was issued and everything else seemed like the optimal choice knowing that it was a race against the clock. I&#8217;ve gained a bunch of experience with Cassandra in the NoSQL world, but the Facebook born distrubuted beast felt like overkill for the task, instead the much more lean, lightweight and configuration free Redis was used, and it gave me an excuse to try something new. Spring seemed like a solid choice thanks to it&#8217;s ability to embed tomcat in a few lines of code, this was a large reason for choosing Spring due to the time-based challenge that was presented in the task.</p>
+
+
+<br/>
+
+
+<p>The full <a href="">REdiST application</a> can be found on my github.</p>
+
+</div>
+
 </article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
 
 </div>
 			</div>

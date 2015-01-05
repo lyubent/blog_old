@@ -9,7 +9,7 @@
 	<meta name="author" content="Lyuben Todorov">
 
 	
-	<meta name="description" content="Apr 16th, 2014 Python Driver Overview Using Twissandra Twissandra, a Twitter clone using Cassandra for storage, has had a makeover to use the new &hellip;">
+	<meta name="description" content="Jan 5th, 2015 REST, nosql, redis, web Redist REdiST = Redis + REST REdiST is a REST service that uses Redis as it&#8217;s data cache. It was &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -122,7 +122,64 @@
   
 
 
-<time datetime="2014-04-16T11:45:20+03:00" data-updated="true" itemprop="datePublished">Apr 16<span>th</span>, 2014</time></div>
+<time datetime="2015-01-05T20:45:21+00:00" data-updated="true" itemprop="datePublished">Jan 5<span>th</span>, 2015</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/rest/'>REST</a>, <a class='category' href='/blog/categories/nosql/'>nosql</a>, <a class='category' href='/blog/categories/redis/'>redis</a>, <a class='category' href='/blog/categories/web/'>web</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/01/05/redist/" itemprop="url">Redist</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>REdiST = Redis + REST</h2>
+
+
+<p>REdiST is a REST service that uses Redis as it&#8217;s data cache. It was developed as part of a 2 hour coding interview and took me a total of 32 minutes. The task was to create a REST service that used a NoSQL store in Java and handles a GET request from which it extracts 3 parameters, page, size, zoomFactor, checks whether an entry for these parameters are present in a cache and returns the stored value as a string.</p>
+
+
+<br/>
+
+
+<p>I&#8217;m particullarly proud of this peice of work as it was my first time using trying to embed tomcat instead of setting up a full instance to host the REST service. Spring makes it simple enough to add a web service, and with it&#8217;s ability to embed tomcat it seemed like a perfect choice for the task.</p>
+
+
+<br/>
+
+
+<p>Why did I use the tech that was listed above? Java was part of the requirements that I was issued and everything else seemed like the optimal choice knowing that it was a race against the clock. I&#8217;ve gained a bunch of experience with Cassandra in the NoSQL world, but the Facebook born distrubuted beast felt like overkill for the task, instead the much more lean, lightweight and configuration free Redis was used, and it gave me an excuse to try something new. Spring seemed like a solid choice thanks to it&#8217;s ability to embed tomcat in a few lines of code, this was a large reason for choosing Spring due to the time-based challenge that was presented in the task.</p>
+
+
+<br/>
+
+
+<p>The full <a href="">REdiST application</a> can be found on my github.</p>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-04-16T09:45:20+01:00" data-updated="true" itemprop="datePublished">Apr 16<span>th</span>, 2014</time></div>
 		<div class="tags">
 
 </div>
@@ -465,7 +522,7 @@ session.execute(add_user_query, ("lyubent", "passw0rd", "{'me@email.com', 'me@ex
   
 
 
-<time datetime="2014-03-03T07:03:09+02:00" data-updated="true" itemprop="datePublished">Mar 3<span>rd</span>, 2014</time></div>
+<time datetime="2014-03-03T05:03:09+00:00" data-updated="true" itemprop="datePublished">Mar 3<span>rd</span>, 2014</time></div>
 		<div class="tags">
 
 
@@ -508,7 +565,7 @@ session.execute(add_user_query, ("lyubent", "passw0rd", "{'me@email.com', 'me@ex
   
 
 
-<time datetime="2013-12-01T02:45:09+02:00" data-updated="true" itemprop="datePublished">Dec 1<span>st</span>, 2013</time></div>
+<time datetime="2013-12-01T00:45:09+00:00" data-updated="true" itemprop="datePublished">Dec 1<span>st</span>, 2013</time></div>
 		<div class="tags">
 
 
@@ -562,7 +619,7 @@ var chart;$(document).ready(function(){Highcharts.setOptions({colors:["#FF9655",
 </nav></div>
 			</div>
 			<footer id="footer" class="inner"><p>
-  <span class="credit">Copyright &copy; 2014 - Lyuben Todorov</span>
+  <span class="credit">Copyright &copy; 2015 - Lyuben Todorov</span>
 </p>
 
 <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
