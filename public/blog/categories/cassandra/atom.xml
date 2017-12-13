@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cassandra | Lyuben's Blog]]></title>
   <link href="http://lyubentodorov.co.uk/blog/categories/cassandra/atom.xml" rel="self"/>
   <link href="http://lyubentodorov.co.uk/"/>
-  <updated>2014-04-16T12:19:56+03:00</updated>
+  <updated>2015-01-05T20:48:32+00:00</updated>
   <id>http://lyubentodorov.co.uk/</id>
   <author>
     <name><![CDATA[Lyuben Todorov]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Repair With LCS in Cassandra 2.1]]></title>
     <link href="http://lyubentodorov.co.uk/blog/2014/03/03/repair-with-lcs-in-cassandra-2-dot-1/"/>
-    <updated>2014-03-03T07:03:09+02:00</updated>
+    <updated>2014-03-03T05:03:09+00:00</updated>
     <id>http://lyubentodorov.co.uk/blog/2014/03/03/repair-with-lcs-in-cassandra-2-dot-1</id>
     <content type="html"><![CDATA[<p>Post <a href="https://issues.apache.org/jira/browse/CASSANDRA-5351" target="_blank" title="More efficient repairs - Cassandra JIRA">CASSANDRA-5351</a> repairs can be carried out incrementally to reduce repair time, more details can be found on the <a href="http://www.datastax.com/dev/blog/more-efficient-repairs" target="_blank" title="More efficient repairs in 2.1">DataStax dev blog</a>.</p>
 
@@ -33,7 +33,7 @@
   <entry>
     <title type="html"><![CDATA[Bootstraping Cassandra via VPN]]></title>
     <link href="http://lyubentodorov.co.uk/blog/2013/12/01/bootstraping-cassandra-via-vpn/"/>
-    <updated>2013-12-01T02:45:09+02:00</updated>
+    <updated>2013-12-01T00:45:09+00:00</updated>
     <id>http://lyubentodorov.co.uk/blog/2013/12/01/bootstraping-cassandra-via-vpn</id>
     <content type="html"><![CDATA[<p>The CassTor application relies on VPN allowing you to bootstrap as if you are part of a LAN network from remote machines. Today a problem was encountered for the mechanism of detecting which IP was to be placed in cassandra&rsquo;s configuration (for the listen_address option).</p>
 

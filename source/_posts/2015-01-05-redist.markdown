@@ -1,0 +1,15 @@
+---
+layout: post
+title: "redist"
+date: 2015-01-05 20:45:21 +0000
+comments: true
+categories: [redis, REST, web, nosql]
+---
+<h2>REdiST = Redis + REST</h2>
+<p>REdiST is a REST service that uses Redis as it's data cache. It was developed as part of a 2 hour coding interview and took me a total of 32 minutes. The task was to create a REST service that used a NoSQL store in Java and handles a GET request from which it extracts 3 parameters, page, size, zoomFactor, checks whether an entry for these parameters are present in a cache and returns the stored value as a string.</p>
+<br/>
+<p>I'm particullarly proud of this peice of work as it was my first time using trying to embed tomcat instead of setting up a full instance to host the REST service. Spring makes it simple enough to add a web service, and with it's ability to embed tomcat it seemed like a perfect choice for the task.</p>
+<br/>
+<p>Why did I use the tech that was listed above? Java was part of the requirements that I was issued and everything else seemed like the optimal choice knowing that it was a race against the clock. I've gained a bunch of experience with Cassandra in the NoSQL world, but the Facebook born distrubuted beast felt like overkill for the task, instead the much more lean, lightweight and configuration free Redis was used, and it gave me an excuse to try something new. Spring seemed like a solid choice thanks to it's ability to embed tomcat in a few lines of code, this was a large reason for choosing Spring due to the time-based challenge that was presented in the task.</p>
+<br/>
+<p>The full <a href="https://github.com/lyubent/redist">REdiST application</a> can be found on my github.</p>
